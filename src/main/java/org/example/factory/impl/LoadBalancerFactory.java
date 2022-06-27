@@ -1,7 +1,7 @@
 package org.example.factory.impl;
 
-import org.example.Provider;
 import org.example.exception.MaxNumberOfProvidersException;
+import org.example.provider.Provider;
 import org.example.strategy.ProviderStrategy;
 
 import java.util.List;
@@ -13,6 +13,7 @@ public class LoadBalancerFactory {
 
     public static class LoadBalancerBuilder {
         private int maxAcceptedProviders = 10;
+
         private ProviderStrategy strategy;
 
         private List<Provider> providers;
