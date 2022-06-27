@@ -20,7 +20,6 @@ public class LoadBalancerImpl implements LoadBalancer {
     private static final Logger logger = LogManager.getLogger(LoadBalancerImpl.class);
     private List<Provider> providers;
     private int maxAcceptedProviders = MAX_NUMBER_ACCEPTED_PROVIDERS;
-
     private final ProviderStrategy providerStrategy;
 
     LoadBalancerImpl(List<Provider> providers, ProviderStrategy providerStrategy) throws MaxNumberOfProvidersException {
@@ -72,7 +71,7 @@ public class LoadBalancerImpl implements LoadBalancer {
 
                 }
             } else {
-                if (provider.getHealthCheckCount() > MAX_HEALTH_CHECK_COUNT) {
+                if (provider.getHealthCheckCount() >= MAX_HEALTH_CHECK_COUNT) {
                     provider.setHealthy(true);
                     provider.setStatus(ProviderStatus.ACTIVE);
                     provider.resetHeathCheckCount();

@@ -7,8 +7,8 @@ import org.example.strategy.ProviderStrategy;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class RoundRobinStrategy implements ProviderStrategy {
-    private final AtomicInteger atomicCounter = new AtomicInteger(0);
     private static final Logger logger = LogManager.getLogger(RoundRobinStrategy.class);
+    private final AtomicInteger atomicCounter = new AtomicInteger(0);
 
     @Override
     public Integer pick(Integer size) {

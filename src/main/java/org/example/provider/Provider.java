@@ -13,7 +13,6 @@ public class Provider {
 
     private final AtomicInteger healthCheckCount = new AtomicInteger(0);
 
-
     private final AtomicInteger countOfCurrentCalls = new AtomicInteger(0);
 
 

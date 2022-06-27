@@ -20,7 +20,6 @@ public class App {
         providers.add(new Provider("1"));
         providers.add(new Provider("2"));
         providers.add(new Provider("3"));
-//        providers.add(new Provider("4"));
 
         LoadBalancerImpl loadBalancer = LoadBalancerFactory
                 .builder()
@@ -28,9 +27,6 @@ public class App {
                 .providers(providers)
                 .strategy(new RoundRobinStrategy())
                 .build();
-//        LoadBalancer loadBalancer = new LoadBalancer(providers, new RoundRobinStrategy());
-
-//        loadBalancer.excludeProvider("1");
 
         try {
             Provider provider1 = loadBalancer.getProvider().get();
@@ -42,8 +38,7 @@ public class App {
             loadBalancer.excludeProvider("1");
 
             loadBalancer.checkHeartBeat();
-            loadBalancer.checkHeartBeat();
-            loadBalancer.checkHeartBeat();
+
 
             System.out.println(provider1);
             System.out.println(provider2);
@@ -51,7 +46,10 @@ public class App {
             System.out.println(provider4);
             System.out.println(provider5);
 
-            loadBalancer.getAllActiveProviders();
+            loadBalancer.checkHeartBeat();
+
+
+            System.out.println(loadBalancer.getAllActiveProviders());
 
         } catch (Exception e) {
 
