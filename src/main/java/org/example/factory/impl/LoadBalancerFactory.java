@@ -12,7 +12,7 @@ public class LoadBalancerFactory {
     }
 
     public static class LoadBalancerBuilder {
-        private int maxAcceptedProviders = 10;
+        private int maxAcceptedProviders;
 
         private ProviderStrategy strategy;
 
@@ -34,7 +34,9 @@ public class LoadBalancerFactory {
         }
 
         public LoadBalancerImpl build() throws MaxNumberOfProvidersException {
-            return new LoadBalancerImpl(providers, this.strategy, maxAcceptedProviders);
+            LoadBalancerImpl loadBalancer = new LoadBalancerImpl(providers, this.strategy);
+            loadBalancer.setMaxAcceptedProviders(maxAcceptedProviders);
+            return loadBalancer;
         }
     }
 

@@ -5,7 +5,6 @@ import org.example.exception.ProviderNotFoundException;
 import org.example.factory.impl.LoadBalancerImpl;
 import org.example.factory.impl.LoadBalancerFactory;
 import org.example.provider.Provider;
-import org.example.strategy.impl.RandomStrategy;
 import org.example.strategy.impl.RoundRobinStrategy;
 
 import java.util.ArrayList;
@@ -34,17 +33,25 @@ public class App {
 //        loadBalancer.excludeProvider("1");
 
         try {
-            Provider provider1 = loadBalancer.getProvider();
-            Provider provider2 = loadBalancer.getProvider();
-            Provider provider3 = loadBalancer.getProvider();
-            Provider provider4 = loadBalancer.getProvider();
-            Provider provider5 = loadBalancer.getProvider();
+            Provider provider1 = loadBalancer.getProvider().get();
+            Provider provider2 = loadBalancer.getProvider().get();
+            Provider provider3 = loadBalancer.getProvider().get();
+            Provider provider4 = loadBalancer.getProvider().get();
+            Provider provider5 = loadBalancer.getProvider().get();
+
+            loadBalancer.excludeProvider("1");
+
+            loadBalancer.checkHeartBeat();
+            loadBalancer.checkHeartBeat();
+            loadBalancer.checkHeartBeat();
 
             System.out.println(provider1);
             System.out.println(provider2);
             System.out.println(provider3);
             System.out.println(provider4);
             System.out.println(provider5);
+
+            loadBalancer.getAllActiveProviders();
 
         } catch (Exception e) {
 

@@ -6,9 +6,16 @@ import org.example.exception.MaxNumberOfProvidersException;
 import org.example.exception.NoProviderRegisteredException;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface LoadBalancer {
     void registerProviders(List<Provider> providers) throws MaxNumberOfProvidersException;
-    Provider getProvider() throws NoProviderRegisteredException;
+
+    Optional<Provider> getProvider() throws NoProviderRegisteredException;
+
+    List<Provider> getAllActiveProviders();
+
     Provider excludeProvider(String id) throws ProviderNotFoundException;
+
+    void checkHeartBeat();
 }
