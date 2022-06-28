@@ -1,4 +1,4 @@
-# LOAD BALANCING
+# Load Balancing
 A ``load balancer`` is a component that, once invoked, it distributes incoming requests to a list of registered providers and return the value obtained from ``one`` of the registered ``providers`` to the original caller. For simplicity we will consider both the load balancer and the provider having a public method named get()
 
 ![1_tEaZGz-p1-E2ytNjl5RPJg](https://user-images.githubusercontent.com/7686353/176250618-6f7f32e2-7d63-4803-bf73-e8069b3aad83.jpeg)
