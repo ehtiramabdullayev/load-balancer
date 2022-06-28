@@ -6,10 +6,10 @@ A ``load balancer`` is a component that, once invoked, it distributes incoming r
 
 ``PLEASE NOTE:`` Every component described in the exercise is a piece of software of the same codebase. You don’t need to build a “runnable” application, there is no need to create any real server or rest service, no need to build any real network-based interaction, there should be no framework within the codebase. Simulating real world scenario means however that it has to be working properly and effectively in all scenario that can happen in real life (eg. handling parallel requests, managing edge cases etc.)
 
-### Step 1 – Generate provider
+## Step 1 – Generate provider
 Generate a Provider that, once invoked on his get() method, retrieve an unique identifier (string) of the provider instance
 
-### Step 2 – Register a list of providers 
+## Step 2 – Register a list of providers 
 Register a list of provider instances to the Load Balancer - the maximum number of providers accepted from the load balancer is 10
 
 ### Step 3 – Random invocation 
