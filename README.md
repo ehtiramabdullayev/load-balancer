@@ -27,7 +27,7 @@ The load balancer should invoke every X seconds each of its registered providers
 ## Step 7 – Improving Heart beat checker
 If a node has been previously excluded from the balancing it should be re-included if it has successfully been “heartbeat checked” for 2 consecutive times 
 
-### Step 8 – Cluster Capacity Limit 
+## Step 8 – Cluster Capacity Limit 
 Assuming that each provider can handle a maximum number of ``Y`` parallel requests, the Balancer should not accept any further request when it has (``Y``*aliveproviders) incoming
 
 
