@@ -30,6 +30,7 @@ If a node has been previously excluded from the balancing it should be re-includ
 ## Step 8 – Cluster Capacity Limit 
 Assuming that each provider can handle a maximum number of ``Y`` parallel requests, the Balancer should not accept any further request when it has (``Y``*aliveproviders) incoming
 
+-------------------------------------------
 
 ## Notes:
 
